@@ -25,9 +25,7 @@ function App() {
       setLoading(true);
       setError(null);
 
-      const data = await getLottoData(10, (progressInfo) => {
-        setProgress(progressInfo.percentage);
-      });
+      const data = await getLottoData();
 
       if (data && data.length > 0) {
         setDrawData(data);
