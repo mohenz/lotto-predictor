@@ -34,12 +34,8 @@ export const getLottoData = async () => {
         return lottoData.draws;
     } catch (error) {
         console.error('❌ 데이터 로드 실패:', error);
-        throw new Error('로또 데이터를 불러올 수 없습니다.');
+        throw error;
     }
 };
 
-// 캐시 초기화
-export const clearCache = () => {
-    localStorage.removeItem(CACHE_KEY);
-    console.log('🗑️ 캐시 초기화 완료');
-};
+export const clearCache = () => localStorage.removeItem(CACHE_KEY);
